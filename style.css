@@ -403,6 +403,71 @@ body.light-mode .menu-toggle span {
   box-shadow: 0 0 6px #0f172a66;
 }
 
+/* Fixes the container to the bottom right */
+.social-icons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+/* Base styles for the icons */
+.social-icon {
+    font-size: 28px;
+    color: #ffffff;
+    background-color: #333333;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    opacity: 0; /* Hidden by default before animation starts */
+    
+    /* Applies the fade animation */
+    animation: fadeSlideUp 0.8s ease forwards;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect */
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+.social-icon.insta:hover { background-color: #E1306C; }
+.social-icon.fb:hover { background-color: #1877F2; }
+.social-icon.twitter:hover { background-color: #1DA1F2; }
+
+/* 
+ * Animation Delays
+ * This creates the sequence: Insta -> FB -> Twitter 
+ */
+.social-icon.insta {
+    animation-delay: 0.5s; 
+}
+
+.social-icon.fb {
+    animation-delay: 1.0s; 
+}
+
+.social-icon.twitter {
+    animation-delay: 1.5s; 
+}
+
+/* Keyframes for fading in and sliding up slightly */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .sidebar {
   position: fixed;
   top: 0;
