@@ -415,11 +415,11 @@ body.light-mode .menu-toggle span {
 
 /* Base styles for the icons */
 .social-icon {
-    font-size: 50px;
+    font-size: 10px;
     color: #ffffff;
     background-color: #333333;
-    width: 70px;
-    height: 70px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
